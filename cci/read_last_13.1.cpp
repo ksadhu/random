@@ -1,3 +1,9 @@
+/*
+ This program prints last 10 lines of a file with the constraint that we can only read the file once.
+ Ofcourse, it uses two pointers. If each line has to be accessed only once, then a circular array of size
+ K can be used to implement this.
+ */
+
 #include<iostream>
 #include<fstream>
 using namespace std;
