@@ -25,6 +25,24 @@ node* alternate_merge(node** n1, node** n2){
 		return ans;
 	}
 }
+// This function modifies the list such that each pair is reversed.
+node* altrev(node **n){
+	if(*n!=NULL and (*n)->next!=NULL){
+		node *temp=*n;
+		node *temp1=temp->next;
+		if(temp1->next!=NULL){
+			node *temp2 = temp1->next;
+			temp1->next = temp;
+			temp->next = altrev(&temp2);
+			return temp1;
+		}
+		else{
+			temp1->next=temp;
+			temp->next=NULL;
+			return temp1;
+		}
+	}
+}
 int main(){
 	list * lis1=new list();
 	node * nod1=NULL;
@@ -41,9 +59,11 @@ int main(){
 	lis2->insert(&nod2,67);
 //	lis2->traverse(nod2);
 	
-	node* merge=alternate_merge(&nod1,&nod2);
-	list * res=new list();
-	res->traverse(merge);
+	//node* merge=alternate_merge(&nod1,&nod2);
+	list * res=new list();	
+	res->traverse(nod1);
+	node* an=altrev(&nod1);
+	res->traverse(an);
 
 	return 0;
 }

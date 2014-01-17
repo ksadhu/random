@@ -55,7 +55,7 @@ void list::traverse(node* n){
 		temp=temp->next;
 	}
 }
-int main(){
+/*int main(){
 	list * lis=new list();
 	node * nod=NULL;
 	lis->insert(&nod,10);
@@ -71,4 +71,4 @@ int main(){
 	lis->traverse(nod);
 	cout<<"----------------------"<<endl;
 	return 0;
-}
+}*/
